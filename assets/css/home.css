@@ -1,0 +1,98 @@
+main .header {
+	color: var(--color-primary);
+	text-align: center;
+	font-family: var(--fontPrimarySemi);
+	margin: 3rem;
+}
+
+.banner#homepage {
+	background-image: url(../images/banner.png);
+}
+
+.banner#homepage .caption {
+	font-size: max(2.1rem, 3vmax);
+}
+
+.banner#homepage .sub-text {
+	margin: 1rem 0 3rem 0;
+	font-size: max(1rem, 1vmax);
+}
+
+
+/* Collection Container */
+
+.collection {
+	margin: auto;
+	max-width: 900px;
+}
+
+.collection .item {
+	--col-size: min(370px, 40vmax);
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-between;
+
+	margin-bottom: 2.5rem
+}
+
+.collection .item.reverse {
+	flex-direction: row-reverse;
+}
+
+.collection .item > * {
+	height: var(--col-size);
+	flex-grow: 1;
+	flex-basis: var(--col-size);
+	margin: 20px;
+}
+
+.collection .item .item-image img {
+	--size: 100%;
+	width: var(--size);
+	height: var(--size);
+	object-fit: cover;
+	object-position: center top;
+}
+
+.collection .item .item-info {
+	display: flex;
+	flex-direction: column;
+}
+
+.collection .item .item-info .summary {
+	margin: 2rem 0 auto 0;
+}
+
+.collection .item .item-info .title {
+	color: var(--color-primary);
+	font-size: 1.5rem;
+}
+
+.highlight {
+	background-color: var(--color-secondary);
+}
+
+.highlight .main {
+	padding: 2rem;
+	display: grid;
+	grid-template-columns: 120px 1fr;
+	column-gap: 2rem;
+	row-gap: 2rem
+}
+
+.highlight .main > * {
+}
+
+.highlight .main .image img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+footer .footer-main {
+	background-color: var(--color-primary);
+}
+
+footer .copyright {
+	color: var(--color-primary);
+}
