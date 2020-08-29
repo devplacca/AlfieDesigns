@@ -1,0 +1,318 @@
+.banner {
+	background-image: url("../images/decoratives/Image 7.png");
+}
+
+.small-heading {
+	text-align: center;
+	color: var(--color-primary);
+	margin-bottom: 1rem;
+}
+
+main .intro,
+main section {
+	padding: 2rem;
+}
+
+main .intro {
+	padding-bottom: 1rem;
+	color: var(--color-primary);
+	font-weight: normal;
+	text-align: center;
+}
+
+main .inception .story > * {
+	padding: 1rem;
+	flex-grow: 1;
+}
+
+main .inception .story img {
+	min-width: 270px;
+	width: 35%;
+	height: auto;
+	align-self: center;
+	object-fit: cover;
+}
+
+main .inception .story .text {
+	flex-basis: 60%;
+	text-align: center;
+}
+
+main section.message {
+	background-color: var(--color-secondary);
+}
+
+main section.message img {
+	min-width: 120px;
+	width: 10%;
+	border-radius: 50%;
+	object-fit: scale-down;
+}
+
+main section.message .text {
+	--x: 5%;
+	--y: 5%;
+	/*flex-grow: 1;*/
+	min-width: 270px;
+	flex-basis: 70%;
+	text-align: center;
+	padding: 1.5rem 1rem 0 1rem;
+	position: relative;
+	color: var(--color-white);
+	z-index: 2;
+}
+
+main section.message .text::before,
+main section.message .text::after {
+	/*content: '"';*/
+	position: absolute;
+	color: var(--color-primary);
+	--fz: 3rem;
+	font-size: var(--fz);
+	-webkit-transform: scale(3);
+	-moz-transform: scale(3);
+	-ms-transform: scale(3);
+	-o-transform: scale(3);
+	transform: scale(3);
+
+	font-family: fontTertiary;
+
+	z-index: 1;
+	opacity: .3;
+	/*line-height: 1rem;*/
+}
+
+main section.message .text::before {
+	top: 5%;
+	left: var(--x);
+}
+
+main section.message .text::after {
+	bottom: -30%;
+	right: var(--x);
+}
+
+main .global-reach > * {
+	flex-grow: 1;
+}
+
+main .global-reach img {
+	width: 80%;
+	max-width: 340px;
+}
+
+main .global-reach .text {
+	padding-bottom: 2rem;
+	text-align: center;
+}
+
+main .global-reach .text span {
+	color: var(--color);
+}
+
+main .growth {
+	padding: 0 1rem;
+	height: 330px;
+	background-image: url("../images/decoratives/ag-bgi-1.png");
+	background-size: auto 150%;
+	background-repeat: no-repeat;
+	/*background-position: 0 0;*/
+	position: relative;
+}
+
+main .growth p {
+	color: var(--color-white);
+	text-align: center;
+	z-index: 2;
+}
+
+main .growth::before {
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background-color: var(--color-secondary);
+	opacity: .5;
+}
+
+main .passion > * {
+	padding: 1rem;
+}
+
+main .passion img {
+	width: 30%;
+	min-width: 270px;
+	height: auto;
+	object-fit: scale-down;
+	/*flex-grow: 1;*/
+}
+
+main .passion p {
+	flex-basis: 60%;
+	flex-grow: 1;
+	text-align: center;
+}
+
+main .team {
+	background-color: var(--color-primary);
+	position: relative;
+}
+
+main .team .small-heading {
+	color: var(--color-secondary);
+	margin-bottom: 2rem;
+}
+
+main .team .icon.button {
+	--size: 20px;
+	position: absolute;
+	bottom: calc(50% - var(--size) / 2 - 1rem);
+	--x: 10%;
+}
+
+main .team .icon.button.left {
+	left: var(--x);
+}
+
+main .team .icon.button.right {
+	right: var(--x);
+}
+
+main .team .icon.button svg {
+	fill: var(--color-white);
+}
+
+main .team .icon.button svg .a {
+	fill: none;
+}
+
+main .team .icon.button svg .b {
+	stroke-width: 3;
+	stroke: var(--color-white);
+}
+
+main .team .team-members {
+	/*min-width: 300px;*/
+	--wh: 200px;
+	width: var(--wh);
+	height: calc(var(--wh) + 10px);
+	overflow: hidden;
+	/*padding: 1rem;*/
+	position: relative;
+}
+
+main .team .team-members .member-profile {
+	width: var(--width);
+	height: 100%;
+	margin: 0 1.5rem;
+	position: absolute;
+	z-index: 0;
+	opacity: 0;
+	-webkit-transform: scale(0);
+	-moz-transform: scale(0);
+	-ms-transform: scale(0);
+	-o-transform: scale(0);
+	transform: scale(0);
+
+	transition-property: opacity z-index transform;
+
+	-webkit-transition: all .3s ease-in-out;
+	-moz-transition: all .3s ease-in-out;
+	-ms-transition: all .3s ease-in-out;
+	-o-transition: all .3s ease-in-out;
+	transition: all .3s ease-in-out;
+}
+
+main .team .team-members .member-profile.show {
+	z-index: 10;
+	opacity: 1;
+	-webkit-transform: scale(1);
+	-moz-transform: scale(1);
+	-ms-transform: scale(1);
+	-o-transform: scale(1);
+	transform: scale(1);
+}
+
+main .team .team-members .member-profile .image {
+	--s: 120px;
+	width: var(--s);
+	height: var(--s);
+	object-fit: cover;
+	border-radius: 50%;
+}
+
+main .team .team-members .member-profile .social-accounts {
+	--pad: 5px;
+	padding: var(--pad) 0;
+}
+
+main .team .team-members .member-profile .social-accounts .icon {
+	margin: 0 var(--pad);
+	--size: 17px;
+}
+
+footer .sign-up {
+	background-color: var(--color-white);
+	background-image: none;
+}
+
+footer .sign-up form {
+	border: 1px solid var(--color-secondary);
+}
+
+
+/* Screen Media queries */
+
+@media screen and (min-width:768px) {
+	main .intro,
+	main .global-reach,
+	main .global-reach .text,
+	main .growth {
+		padding-left: 10%;
+		padding-right: 10%;
+	}
+
+	main .inception .story img {
+		padding-left: 0;
+	}
+
+	main .inception .story .text {
+		text-align: justify;
+		padding-right: 0;
+	}
+
+	main .growth {
+		background-size: cover;
+		background-position: 0 30%;
+	}
+
+	main .passion p {
+		text-align: left;
+	}
+
+	main .team .icon.button {
+		--x: 20%;
+	}
+}
+
+@media screen and (min-width: 900px) {
+	main .team .icon.button {
+		display: none;
+	}
+
+	main .team .team-members {
+		overflow: visible;
+	}
+
+	main .team .team-members .member-profile {
+		position: static;
+		opacity: 1;
+		-webkit-transform: scale(1);
+		-moz-transform: scale(1);
+		-ms-transform: scale(1);
+		-o-transform: scale(1);
+		transform: scale(1);
+	}
+}

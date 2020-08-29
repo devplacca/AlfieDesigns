@@ -1,0 +1,108 @@
+main .heading {
+	--h: 230px;
+	height: var(--h);
+	position: relative;
+	padding: 0 1rem;
+	margin-bottom: 0;
+	font-size: 170%;
+	/*font-weight: normal;*/
+	/*font-weight: 600;*/
+}
+
+main .heading::before {
+	content: "";
+	position: absolute;
+	background-color: var(--color-primary);
+	opacity: .3;
+	border-radius: 50%;
+	--size: calc(var(--h) * .75);
+	width: var(--size);
+	height: var(--size);
+	z-index: -1;
+}
+
+main .page-products {
+	padding: 2rem 0;
+}
+
+main .page-products .category {
+	padding: 1.5rem 2rem;
+}
+
+main .page-products .category .category-name {
+	text-align: center;
+	position: relative;
+	font-weight: normal;
+	text-transform: uppercase;
+}
+
+main .page-products .category .category-name::after {
+	content: "";
+	--w: 60px;
+	border: 1px solid var(--color-primary);
+	position: absolute;
+	bottom: -40%;
+	width: var(--w);
+	left: calc(50% - var(--w) / 2);
+}
+
+main .page-products .category .products-container .product {
+	margin: 2rem 0;
+}
+
+main .page-products .category .products-container .product .image {
+	display: block;
+	margin: auto;
+	--width: 170px;
+	width: var(--width);
+	height: calc(var(--width) + var(--width) * .3);
+	border: 1px solid var(--color-grey);
+	object-fit: cover;
+}
+
+main .page-products .category .products-container .product .price {
+	text-align: center;
+	margin-top: 1rem;
+}
+
+main .page-products .all-products {
+	text-align: center;
+	color: var(--color-primary);
+	display: block;
+	margin: 1rem 0;
+}
+
+
+@media screen and (min-width: 768px) {
+	main .heading {
+		--h: 300px;
+		font-size: 250%;
+	}
+
+	main .page-products .category {
+		padding-left: 10%;
+		padding-right: 10%;
+	}
+
+	main .page-products .category .category-name {
+		text-align: left;
+		display: flex;
+	}
+
+	main .page-products .category .category-name::after {
+		position: unset;
+		margin: auto;
+		margin-left: 1rem;
+		flex-grow: 1;
+	}
+
+	main .page-products .category .products-container  {
+		display: inline-flex;
+		overflow: auto;
+		width: 100%;
+	}
+
+	main .page-products .category .products-container .product {
+		margin: 2rem 4% 2rem 0;
+	}
+}

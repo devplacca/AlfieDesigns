@@ -1,0 +1,123 @@
+main .banner {
+	background-image: url("../images/decoratives/mp-bgi.png")
+}
+
+.slideshow {
+	padding: 3rem 1rem;
+}
+
+.slideshow .active-slideshow-image {
+	position: relative;
+	padding: 1rem;
+}
+
+.slideshow .active-slideshow-image .slideshow-buttons .icon.button {
+	position: absolute;
+	--size: 25px;
+	--x: 0;
+	top: calc(50% - var(--size) / 2);
+	cursor: pointer;
+	transition: transform .2s ease;
+}
+
+.slideshow .active-slideshow-image .slideshow-buttons .icon.button:hover {
+	-webkit-transform: scale(1.2);
+	-moz-transform: scale(1.2);
+	-ms-transform: scale(1.2);
+	-o-transform: scale(1.2);
+	transform: scale(1.2);
+
+}
+
+.slideshow .active-slideshow-image .slideshow-buttons .icon.button.left {
+	left: var(--x);
+}
+
+.slideshow .active-slideshow-image .slideshow-buttons .icon.button.right {
+	right: var(--x);
+}
+
+.slideshow .active-slideshow-image .slideshow-buttons .icon svg {
+	fill: var(--color-primary);
+}
+
+.slideshow .active-slideshow-image .slideshow-buttons .icon svg .a {
+	fill: none;
+}
+
+.slideshow .active-slideshow-image .slideshow-buttons .icon svg .b {
+	stroke: var(--color-primary);
+	stroke-width: 2;
+}
+
+.slideshow .active-slideshow-image img {
+	--w: min(80%, 400px);
+	width: var(--w);
+	height: calc(var(--w) / 3);
+	align-self: center;
+	display: block;
+	margin: auto;
+	object-fit: cover;
+	transition: all .2s ease;
+}
+
+.slideshow .active-slideshow-image img.is-changing {
+	opacity: 0;
+	transform: scale(.1);
+}
+
+.slideshow .slideshow-caption {
+	margin-top: 2rem;
+	text-align: center;
+	color: var(--color-grey);
+}
+
+.slideshow .slideshow-gallery {
+	display: none;
+}
+
+.slideshow .slideshow-gallery img {
+	margin: 0 1rem;
+	--w: 120px;
+	width: var(--w);
+	/*max-width: 120px;*/
+	object-fit: cover;
+	opacity: .2;
+	filter: grayscale(1);
+	transition-property: opacity transform;
+	transition: all .3s ease;
+	cursor: pointer;
+}
+
+.slideshow .slideshow-gallery img:hover {
+	opacity: 1;
+}
+
+.slideshow .slideshow-gallery img.active {
+	opacity: 1;
+	filter: grayscale(0);
+	/*width: calc(var(--w) + 5%);*/
+	transition: all .3s ease;
+	-webkit-transform: scale(1.2);
+	-moz-transform: scale(1.2);
+	-ms-transform: scale(1.2);
+	-o-transform: scale(1.2);
+	transform: scale(1.2);
+}
+
+@media screen and (min-width: 768px) {
+	.slideshow .slideshow-gallery {
+		display: inline-flex;
+		padding: 1.5rem 0;
+		margin: auto;
+		max-width: 600px;
+		overflow: hidden;
+		scroll-behavior: smooth;
+		scroll-snap-type: x mandatory;
+		scroll-snap-stop: center;
+	}
+
+	.slideshow .slideshow-caption {
+		margin-bottom: 2rem;
+	}
+}

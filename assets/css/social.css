@@ -1,0 +1,107 @@
+main .banner {
+	background-image: url("../images/decoratives/Image 7.png");
+}
+
+main .banner .title {
+	text-transform: capitalize;
+
+}
+
+main .blogs {
+	display: grid;
+	/*grid-template-columns: 1fr;*/
+	/*grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));*/
+	grid-gap: 4rem;
+	padding: 3rem 0;
+}
+
+main .blogs .post {
+	/*flex-grow: 1;*/
+	/*flex-basis: 270px;*/
+	padding: 0 1rem;
+	display: grid;
+	grid-template-columns: 1fr;
+	max-width: 900px;
+	/*margin: auto;*/
+}
+
+main .blogs .post > * {
+	/*flex-basis: 50%;*/
+	/*min-width: 270px;*/
+	/*flex-grow: 1;*/
+}
+
+main .blogs .post .post-image {
+	width: 100%;
+	object-fit: cover;
+}
+
+main .blogs .post .post-content {
+	width: 90%;
+	margin: 0 auto;
+}
+
+main .blogs .post .post-content > * {
+	margin: .7rem auto;
+	text-align: center;
+}
+
+main .blogs .post .post-content .feedback-icons .icon-container {
+	margin: auto 1rem;
+}
+
+main .blogs .post .post-content .feedback-icons .icon-container .icon {
+	--size: 35px;
+	padding: .5rem;
+	border: 1px solid var(--color-primary);
+	border-radius: 50%;
+	margin: auto 1rem;
+}
+
+main .blogs .post .post-content .feedback-icons .icon-container .icon svg {
+	fill: var(--color-primary);
+}
+
+main .blogs .post .post-content .feedback-icons .icon-container .icon.favourite svg .a {
+	fill: none;
+}
+
+main .blogs .post .post-content .feedback-icons .icon-container .icon-text {
+	text-transform: capitalize;
+	font-size: .8rem;
+	margin-top: .3rem;
+	/*text-align: center;*/
+}
+
+main .blogs .post .post-content .read-more {
+	width: 100%;
+	padding: 1rem;
+	border: none;
+	background-color: var(--color-secondary);
+	font-family: fontPrimary;
+	color: var(--color-white);
+	border-radius: var(--radius);
+}
+
+@media screen and (min-width: 768px) {
+	main .blogs .post {
+		grid-template-columns: 1fr 1fr;
+	}
+
+	main .blogs .post .post-image {
+		/*width: unset;*/
+		padding-right: 1rem;
+		height: 100%;
+	}
+
+	main .blogs .post .post-content > *:not(.read-more) {
+		text-align: left;
+	}
+}
+
+@media screen and (min-width: 1024px) {
+	main .blogs {
+		padding-left: 10%;
+		padding-right: 10%;
+	}
+}
