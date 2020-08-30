@@ -16,8 +16,8 @@ sliderButtons.forEach(button => {
 
 
 function switchFeedback(direction) {
-	const currentFeedback = sliderContainer.querySelector('.mention')
-	const activeBar = sliderBars.querySelector('.active')
+	const currentFeedback = sliderContainer.querySelector('.mention');
+	const activeBar = sliderBars.querySelector('.active');
 	// xdr means exit direction (for element transition)
 	// ndr means entry direction (for element transition)
 	let [index, xdr, ndr, feedbackSibling, barSibling] = [+currentFeedback.id.split('-').pop()];
@@ -35,8 +35,23 @@ function switchFeedback(direction) {
 			feedback.nextElementSibling,
 			activeBar.nextElementSibling
 		]
-	}[direction]
+	}[direction];
 	// transition new feedback (feedbackToShow)'s entry ...
+	if (!feedbackSibling) {
+		// this will make the feedback section run like a full carousel
+		[
+			feedbackSibling,
+			barSibling
+		] = direction === 'left' ?
+		[
+			allFeedbacks[allFeedbacks.length - 1],
+			sliderBars.children[sliderBars.children.length - 1]
+		] :
+		[
+			allFeedbacks[0],
+			sliderBars.children[0]
+		]
+	}
 	if (feedbackSibling) {
 		activeBar.classList.remove('active');
 		barSibling.classList.add('active')
@@ -61,3 +76,6 @@ function switchFeedback(direction) {
 		}
 	}
 }
+
+// automatically slide through the client feedbacks
+setInterval(() => switchFeedback('right'), 3500)
