@@ -51,14 +51,15 @@ main .banner {
 }
 
 .slideshow .active-slideshow-image img {
-	--w: min(80%, 400px);
+	--w: min(80%, 610px);
 	width: var(--w);
 	height: calc(var(--w) / 3);
 	align-self: center;
 	display: block;
-	margin: auto;
+	/*margin: auto;*/
 	object-fit: cover;
-	transition: all .2s ease;
+	transition: all .25s ease;
+	user-select: none;
 }
 
 .slideshow .active-slideshow-image img.is-changing {
@@ -82,7 +83,7 @@ main .banner {
 	width: var(--w);
 	/*max-width: 120px;*/
 	object-fit: cover;
-	opacity: .2;
+	opacity: .35;
 	filter: grayscale(1);
 	transition-property: opacity transform;
 	transition: all .3s ease;
@@ -119,5 +120,15 @@ main .banner {
 
 	.slideshow .slideshow-caption {
 		margin-bottom: 2rem;
+	}
+
+	.slideshow .active-slideshow-image .slideshow-buttons .icon.button {
+		--x: 5%;
+	}
+}
+
+@media screen and (min-width: 1024px) {
+	.slideshow .active-slideshow-image .slideshow-buttons .icon.button {
+		--x: 15%;
 	}
 }
