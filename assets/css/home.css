@@ -1,3 +1,11 @@
+.head .sub-head {
+	flex-grow: .5;
+}
+
+.head .sub-head .site-name {
+	display: none;
+}
+
 /* Section headings (products, blog posts, etc) */
 section {
 	padding: 2.5rem 1rem;
@@ -402,6 +410,23 @@ main .banner .info {
 /* Screen media queries */
 
 @media screen and (min-width: 768px) {
+	.head .sub-head {
+		flex-grow: 1;
+	}
+
+	.head .sub-head .site-name {
+		display: initial;
+		font-size: 1.5rem;
+		font-weight: 600;
+		color: var(--color-primary);
+		font-family: fontPrimary;
+		margin-left: 1.5rem;
+	}
+
+	.head .icon {
+		--size: 20px;
+	}
+
 	.highlight::after {
 		--size: 400px;
 	}
