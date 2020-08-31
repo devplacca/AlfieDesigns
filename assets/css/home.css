@@ -87,7 +87,20 @@ main .banner .info {
 	color: var(--color-white);
 	background-color: var(--color-primary);
 	/*font-size: 70%;*/
+	border: 1.5px solid transparent;
 	border-radius: calc(var(--radius) / 2);
+	-webkit-transition: all .2s ease-in-out;
+	-moz-transition: all .2s ease-in-out;
+	-ms-transition: all .2s ease-in-out;
+	-o-transition: all .2s ease-in-out;
+	transition: all .2s ease-in-out;
+
+}
+
+.products .categories .category .category-info .button:hover {
+	color: var(--color-primary);
+	background-color: transparent;
+	border-color: var(--color-primary);
 }
 
 .clientele {
