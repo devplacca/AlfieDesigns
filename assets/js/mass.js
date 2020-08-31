@@ -34,7 +34,7 @@ function displayImage(direction, target=undefined) {
 		const mainImage = slideshow.querySelector('.active-slideshow-image img')
 		mainImage.classList.add('is-changing')
 		// change the image's src,
-		mainImage.ontransitionend = event => {
+		mainImage.ontransitionend = onwebkittransitionend = event => {
 			// console.log(mainImage.src, target.src)
 			mainImage.src = target.src
 			// then animate the image back in
