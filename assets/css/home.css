@@ -32,6 +32,10 @@ main .banner .info {
 	color: var(--color-white);
 }
 
+main .banner .info {
+	text-transform: capitalize;
+}
+
 /* Products section */
 .products {
 	padding-left: 0;
@@ -454,7 +458,15 @@ main .banner .info {
 
 	main .banner .info {
 		position: static;
-		color: var(--color-secondary);
+		height: 100%;
+		background-color: #242424;
+		color: var(--color-primary);
+	}
+
+	main .banner .info h4 {
+		word-spacing: .35rem;
+		letter-spacing: .2rem;
+		font-size: 1.5rem
 	}
 }
 
