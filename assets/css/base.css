@@ -65,8 +65,15 @@ a {
 	text-decoration: none
 }
 
-input {
+input,
+textarea {
 	font-family: fontPrimary;
+	border: none;
+}
+
+input:not([type="submit"]),
+textarea {
+	outline: none;
 }
 
 
@@ -236,6 +243,10 @@ nav {
 	/*display: none;*/
 }
 
+nav.shadowed {
+	box-shadow: 0 3px 6px #000;
+}
+
 nav.expanded {
 	left: 0%;
 }
@@ -300,10 +311,6 @@ nav ul li a.active {
 
 /* Footer */
 
-footer {
-
-}
-
 footer .sign-up {
 	background-color: var(--color-primary);
 	padding: 3rem 1rem;
@@ -323,25 +330,45 @@ footer .sign-up > * {
 }
 
 footer .sign-up .sub-text {
-	margin: 1rem auto 2rem auto;
-	color: var(--color-secondary);
+	margin: .5rem auto 2rem auto;
+	color: var(--color-white);
+	font-size: 1.2rem;
 }
 
 footer .sign-up form {
 	/*width: 100%;*/
 	max-width: 700px;
 	margin: auto;
-	border-radius: var(--radius);
-	overflow: hidden;
+	/*overflow: hidden;*/
 }
 
-footer .sign-up form input {
+footer .sign-up form input,
+footer .sign-up form textarea {
+	--webkit-appearance: none;
+	appearance: none;
 	padding: 1rem;
-	border: none;
+	margin: .5rem 0;
+	background-color: rgba(255, 255, 255, .72);
+	border-radius: var(--radius);
 	flex-grow: 1;
+	-webkit-transition: background-color .25s ease-in-out;
+	-moz-transition: background-color .25s ease-in-out;
+	-ms-transition: background-color .25s ease-in-out;
+	-o-transition: background-color .25s ease-in-out;
+	transition: background-color .25s ease-in-out;
+
 }
 
-footer .sign-up form input:first-child::placeholder {
+footer .sign-up form textarea {
+	resize: vertical;
+}
+
+footer .sign-up form input:not([type="submit"]):focus,
+footer .sign-up form textarea:focus {
+	background-color: #fff;
+}
+
+footer .sign-up form input:not([type="submit"])::placeholder {
 	-webkit-transition: .15s ease-in-out;
 	-moz-transition: .15s ease-in-out;
 	-ms-transition: .15s ease-in-out;
@@ -349,15 +376,17 @@ footer .sign-up form input:first-child::placeholder {
 	transition: .15s ease-in-out;
 }
 
-footer .sign-up form input:first-child:focus::placeholder {
+footer .sign-up form input:not([type="submit"]):focus::placeholder,
+footer .sign-up form textarea:focus::placeholder {
 	opacity: .3;
 }
 
 footer .sign-up form input[type="submit"] {
-	/*width: 50%;*/
-	max-width: 110px;
+	width: 100%;
+	/*max-width: 300px;*/
+	align-self: center;
 	font-weight: bold;
-	color: var(--color-primary);
+	color: var(--color-white);
 	background-color: var(--color-secondary)
 }
 
@@ -502,8 +531,8 @@ footer .copyright .social-media > *:hover svg {
 	}
 
 	footer .sign-up {
-		--bgz: auto 80%;
-		background-position-x: 15%;
+		--bgz: auto 70%;
+		background-position-x: 10%;
 	}
 
 	footer .quick-links .column > * {
