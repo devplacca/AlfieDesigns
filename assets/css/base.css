@@ -116,7 +116,7 @@ textarea {
 	color: var(--color-white);
 	font-family: fontTertiary;
 	font-size: 1rem;
-	letter-spacing: 0.5rem;
+	/* letter-spacing: 0.5rem; */
 	z-index: 2;
 }
 
