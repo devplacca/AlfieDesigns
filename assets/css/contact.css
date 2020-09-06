@@ -25,6 +25,7 @@ main .heading {
 	text-align: center;
 	font-weight: normal;
 	position: relative;
+	padding-top: 1rem;
 }
 
 .top-section section.contact-form .form-title::after {
