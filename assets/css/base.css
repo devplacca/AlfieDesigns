@@ -437,7 +437,8 @@ footer .quick-links .column .title::after {
 	left: calc(50% - var(--size) / 2);
 }
 
-footer .quick-links .column.shipping picture img {
+footer .quick-links .column.shipping picture img,
+footer .quick-links .column.shipping img {
 	display: block;
 	width: 120px;
 	margin: 0 auto;
@@ -543,7 +544,8 @@ footer .copyright .social-media > *:hover svg {
 		left: calc(0%);
 	}
 
-	footer .quick-links .column.shipping picture img {
+	footer .quick-links .column.shipping picture img,
+	footer .quick-links .column.shipping img {
 		margin: 0;
 	}
 }
