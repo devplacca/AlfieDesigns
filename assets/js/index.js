@@ -78,4 +78,4 @@ function switchFeedback(direction) {
 }
 
 // automatically slide through the client feedbacks
-setInterval(() => switchFeedback('right'), 3500)
+// setInterval(() => switchFeedback('right'), 3500)
