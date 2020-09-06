@@ -124,11 +124,17 @@ main .banner .info {
 	background-color: var(--color-secondary);
 }
 
-.clientele .client-logos img {
+.clientele .client-logos picture {
 	width: max(100px, 10%);
 	height: auto;
 	/*max-height: 130px;*/
 	margin: 1rem;
+	/*object-fit: scale-down;*/
+}
+
+.clientele .client-logos img {
+	width: 100%;
+	height: 100%;
 	object-fit: scale-down;
 }
 
@@ -170,11 +176,12 @@ main .banner .info {
 	margin: .5rem auto;
 }
 
-.blog-posts .popular-posts .post img {
+.blog-posts .popular-posts .post picture img {
 	width: 100%;
-	height: calc(var(--width) + var(--width) * .3);
+	height: auto;
 	object-fit: cover;
 	object-position: center top;
+	height: calc(var(--width) + var(--width) * .3);
 }
 
 .blog-posts .popular-posts .post .post-summary {
@@ -215,7 +222,7 @@ main .banner .info {
 	padding: 1rem;
 }
 
-.highlight .main img {
+.highlight .main picture img {
 	width: 150px;
 	height: 100%;
 	object-fit: cover;
