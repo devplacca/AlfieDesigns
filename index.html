@@ -5,6 +5,8 @@
 	<meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Alfie Designs is a woman-centered operation that gives you ethically made and sourced production in West Africa.">
+    <meta name="author" content="pyplacca" />
+    <meta name="theme-color" content="#fff" />
     <meta name="robots" content="index, nofollow">
     <meta property="og:type" content="website" />
 	<meta property="og:site_name" content="Afie Designs" />
@@ -16,7 +18,7 @@
 	<link rel="shortcut icon" href="assets/favicon.ico">
 	<link rel="stylesheet" href="assets/css/global.css">
 	<link rel="stylesheet" href="assets/css/base.css">
-	<link rel="stylesheet" href="assets/css/home.css">
+	<link rel="stylesheet" href="assets/css/index.css">
 	<title>Alfie Designs</title>
 </head>
 <body>
@@ -36,7 +38,7 @@
 					<picture>
 					    <source type="image/webp" srcset="assets/logo.webp">
 					    <source type="image/png" srcset="assets/logo.png">
-						<img src="assets/logo.png" alt="banner image">
+						<img src="assets/logo.png" alt="logo">
 					</picture>
 					<span class="site-name">ALFIE DESIGNS</span>
 				</a>
@@ -61,16 +63,43 @@
 		</nav>
 	<!-- </header> -->
 	<main>
-		<div class="carousel banner flex align-center justify-center" id="homepage">
-			<picture>
-			    <source type="image/webp" srcset="assets/images/alfie-home-cover.webp">
-			    <source type="image/jpeg" srcset="assets/images/alfie-home-cover.jpeg">
-				<img src="assets/images/alfie-home-cover.jpeg" alt="banner image">
-			</picture>
-			<div class="info flex align-center justify-center">
-				<h4>We Define Fashion in Africa and Beyond</h4>
-			</div>
+		<div class="carousel banner " id="homepage">
+			<div class="arrows">
+				<span class="icon button left" n="0">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 53 53"><g transform="translate(-0.348)"><rect class="a" width="53" height="53" transform="translate(0.348)"/><path class="b" d="M36.421,50.093l2.219-2.219L17.189,26.421,38.641,4.969,36.421,2.75,12.75,26.421Z" transform="translate(0.814 0.176)"/><rect class="a" width="53" height="53" transform="translate(0.348)"/></g></svg>
 
+				</span>
+				<span class="icon button right" n="1">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 53 53"><g transform="translate(53 53) rotate(180)"><rect class="a" width="53" height="53"/><path class="b" d="M23.671,47.343l2.219-2.219L4.439,23.671,25.891,2.219,23.671,0,0,23.671Z" transform="translate(13.213 2.715)"/><rect class="a" width="53" height="53"/></g></svg>
+
+				</span>
+			</div>
+			<div class="carousel-container ">
+				<div class="content flex align-center justify-center active">
+					<picture>
+					    <source type="image/webp" srcset="assets/images/alfie-home-cover.webp">
+					    <source type="image/jpeg" srcset="assets/images/alfie-home-cover.jpeg">
+						<img src="assets/images/alfie-home-cover.jpeg" alt="banner image">
+					</picture>
+					<div class="info flex align-center justify-center">
+						<h4 class="caption">We Define Fashion in Africa and Beyond</h4>
+					</div>
+				</div>
+				<div class="content flex align-center justify-center">
+					<picture>
+					    <source type="image/webp" srcset="assets/images/alfie-home-cover.webp">
+					    <source type="image/jpeg" srcset="assets/images/alfie-home-cover.jpeg">
+						<img src="assets/images/alfie-home-cover.jpeg" alt="banner image">
+					</picture>
+					<div class="info flex align-center justify-center">
+						<h4 class="caption">We offer quality in masses</h4>
+					</div>
+				</div>
+			</div>
+			<div class="indicator-bars flex justify-center">
+				<span class="bar active"></span>
+				<span class="bar"></span>
+			</div>
 		</div>
 		<section class="products">
 			<!-- <h1 class="heading">PRODUCTS</h1> -->
@@ -221,7 +250,7 @@
 						<picture>
 						    <source type="image/webp" srcset="assets/images/Image 6.webp">
 						    <source type="image/png" srcset="assets/images/Image 6.png">
-							<img class="photo" src="assets/images/Image 6.png" alt="nest logo">
+							<img class="photo" src="assets/images/Image 6.png" alt="client image">
 						</picture>
 						<div class="details">
 							<p class="name">John Doe</p>
@@ -237,9 +266,9 @@
 							<picture>
 							    <source type="image/webp" srcset="assets/images/Image 6.webp">
 							    <source type="image/png" srcset="assets/images/Image 6.png">
-								<img class="photo" src="assets/images/Image 6.png" alt="nest logo">
+								<img class="photo" src="assets/images/Image 6.png" alt="client image">
 							</picture>
-							<!-- <img src="assets/images/Image 6.webp" alt="" class="photo"> -->
+							<!-- <img src="assets/images/Image 6.webp" alt="client image" class="photo"> -->
 							<div class="details">
 								<p class="name">John Doe</p>
 								<p class="company">ABC Company Limited</p>
@@ -252,9 +281,9 @@
 							<picture>
 							    <source type="image/webp" srcset="assets/images/ceo.webp">
 							    <source type="image/png" srcset="assets/images/ceo.png">
-								<img class="photo" src="assets/images/ceo.png" alt="nest logo">
+								<img class="photo" src="assets/images/ceo.png" alt="client image">
 							</picture>
-							<!-- <img src="assets/images/ceo.webp" alt="" class="photo"> -->
+							<!-- <img src="assets/images/ceo.webp" alt="client image" class="photo"> -->
 							<div class="details">
 								<p class="name">Ruby Roundhouse</p>
 								<p class="company">XYZ Inc</p>
@@ -267,9 +296,9 @@
 							<picture>
 							    <source type="image/webp" srcset="assets/images/Image 4.webp">
 							    <source type="image/png" srcset="assets/images/Image 4.png">
-								<img class="photo" src="assets/images/Image 4.png" alt="nest logo">
+								<img class="photo" src="assets/images/Image 4.png" alt="client image">
 							</picture>
-							<!-- <img src="assets/images/Image 4.webp" alt="" class="photo"> -->
+							<!-- <img src="assets/images/Image 4.webp" alt="client image" class="photo"> -->
 							<div class="details">
 								<p class="name">Angela Ashton</p>
 								<p class="company">Milky Productions</p>
@@ -282,9 +311,9 @@
 							<picture>
 							    <source type="image/webp" srcset="assets/images/products/men/alfie-m4.webp">
 							    <source type="image/png" srcset="assets/images/products/men/alfie-m4.png">
-								<img class="photo" src="assets/images/products/men/alfie-m4.png" alt="nest logo">
+								<img class="photo" src="assets/images/products/men/alfie-m4.png" alt="client image">
 							</picture>
-							<!-- <img src="assets/images/products/men/alfie-m4.webp" alt="" class="photo"> -->
+							<!-- <img src="assets/images/products/men/alfie-m4.webp" alt="client image" class="photo"> -->
 							<div class="details">
 								<p class="name">Jason Woods</p>
 								<p class="company">Woodin</p>
@@ -337,7 +366,7 @@
 				<picture>
 				    <source type="image/webp" srcset="assets/images/DHL logo.webp">
 				    <source type="image/png" srcset="assets/images/DHL logo.png">
-					<img src="assets/images/DHL logo.png" alt="nest logo">
+					<img src="assets/images/DHL logo.png" alt="dhl logo">
 				</picture>
 				<!-- <img src="assets/images/DHL logo.webp" alt="dhl logo"> -->
 			</div>
@@ -346,7 +375,7 @@
 			<picture>
 			    <source type="image/webp" srcset="assets/logo.webp">
 			    <source type="image/png" srcset="assets/logo.png">
-				<img class="logo" src="assets/logo.png" alt="nest logo">
+				<img class="logo" src="" alt="alfie designs logo">
 			</picture>
 			<div class="flex-column justify-between">
 				<p class="signature">
