@@ -41,7 +41,7 @@ function switchCarouselContent (direction) {
 	}
 }
 // auto change carousel content
-carouselTimer = setInterval(() => switchCarouselContent('right'), 3500)
+carouselTimer = setInterval(() => switchCarouselContent('right'), 5000)
 
 
 // CLIENTS FEEDBACK SECTION
