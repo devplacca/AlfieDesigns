@@ -1,3 +1,67 @@
+/* Global page classes */
+
+.icon {
+	cursor: pointer;
+	-webkit-transition: transform var(--duration);
+	-moz-transition: transform var(--duration);
+	-ms-transition: transform var(--duration);
+	-o-transition: transform var(--duration);
+	transition: transform var(--duration);
+}
+
+.icon:active {
+	-webkit-transform: scale(.75);
+	-moz-transform: scale(.75);
+	-ms-transform: scale(.75);
+	-o-transform: scale(.75);
+	transform: scale(.75);
+}
+
+.icon[disabled] svg {
+	fill: var(--color-grey);
+	opacity: .5;
+	cursor: default;
+}
+
+.icon.button svg .a {
+	fill: none;
+}
+
+.icon svg {
+	fill: var(--color-primary);
+}
+
+.indicator-bars {
+	position: absolute;
+	--w: clamp(150px, 40%, 220px);
+	width: var(--w);
+	left: calc(50% - var(--w) / 2);
+	bottom: 0;
+	margin: auto;
+}
+
+.indicator-bars .bar {
+	--bg: var(--color-grey);
+	opacity: .3;
+	background-color: var(--bg);
+	height: 2px;
+	flex-basis: 10%;
+	border-radius: 20px;
+	margin: 0 5px;
+
+	transition-property: width, opacity;
+	transition: all var(--duration) ease-in-out calc(var(--duration) / 2);
+}
+
+.indicator-bars .bar.active {
+	--bg: var(--color-primary);
+	opacity: 1;
+	flex-grow: 1;
+}
+
+/* ==================================== */
+
+
 .head .sub-head {
 	flex-grow: .5;
 }
@@ -18,35 +82,76 @@ main .header {
 	margin: 3rem;
 }
 
-main .banner {
+.carousel {
 	position: relative;
 	padding: 0;
-	/*background-color: var(--color-secondary);*/
 }
 
-main .banner > * {
-	/*flex-basis: 50%;*/
-	/*background-image: url(../images/banner.png);*/
+.carousel.banner::before {
+	background-image: none
 }
 
-main .banner picture {
+.carousel .arrows .icon {
+	position: absolute;
+	bottom: calc(50% - var(--size) / 2);
+	--posx: 5%;
+	z-index: 5;
+}
+
+.carousel .arrows .icon.left {
+	left: var(--posx);
+}
+
+.carousel .arrows .icon.right {
+	right: var(--posx);
+}
+
+.carousel-container,
+.carousel-container .content,
+.carousel-container .content picture {
 	width: 100%;
 	height: 100%;
 }
 
-main .banner picture img {
+.carousel-container .content {
+	position: absolute;
+	top: 0;
+	left: 0;
+	/*pointer-events: none;*/
+	opacity: 0;
+	-webkit-transition: all .3s ease-in-out ;
+	-moz-transition: all .3s ease-in-out ;
+	-ms-transition: all .3s ease-in-out ;
+	-o-transition: all .3s ease-in-out ;
+	transition: all .3s ease-in-out ;
+}
+
+.carousel-container .content.active {
+	opacity: 1;
+}
+
+.carousel-container .content picture img {
 	width: inherit;
 	height: inherit;
 	object-fit: cover;
 }
 
-main .banner .info {
+.carousel-container .content .info {
 	position: absolute;
 	color: var(--color-white);
+	text-shadow: 0px 1px 3px #000;
 }
 
-main .banner .info {
+.carousel-container .content .info {
 	text-transform: capitalize;
+}
+
+.carousel-container .content .info .caption {
+	width: 75%;
+}
+
+.carousel .indicator-bars {
+	bottom: 5%;
 }
 
 /* Products section */
@@ -351,35 +456,6 @@ main .banner .info {
 	position: absolute;
 	top: calc(50% - var(--size) / 2);
 	z-index: 2;
-	cursor: pointer;
-	/*padding: 0 1rem;*/
-	-webkit-transition: transform var(--duration);
-	-moz-transition: transform var(--duration);
-	-ms-transition: transform var(--duration);
-	-o-transition: transform var(--duration);
-	transition: transform var(--duration);
-}
-
-.clients-feedback .feedback-container .icon:active {
-	-webkit-transform: scale(.75);
-	-moz-transform: scale(.75);
-	-ms-transform: scale(.75);
-	-o-transform: scale(.75);
-	transform: scale(.75);
-}
-
-.clients-feedback .feedback-container .icon[disabled] svg {
-	fill: var(--color-grey);
-	opacity: .5;
-	cursor: default;
-}
-
-.clients-feedback .feedback-container .icon svg .a {
-	fill: none;
-}
-
-.clients-feedback .feedback-container .icon svg {
-	fill: var(--color-primary);
 }
 
 .clients-feedback .feedback-container .icon.left {
@@ -388,34 +464,6 @@ main .banner .info {
 
 .clients-feedback .feedback-container .icon.right {
 	right: 0;
-}
-
-.clients-feedback .feedback-container .indicator-bars {
-	position: absolute;
-	--w: 40%;
-	width: var(--w);
-	left: calc(50% - var(--w) / 2);
-	bottom: 0;
-	margin: auto;
-}
-
-.clients-feedback .feedback-container .indicator-bars .bar {
-	--bg: var(--color-grey);
-	opacity: .3;
-	background-color: var(--bg);
-	height: 2px;
-	flex-basis: 10%;
-	border-radius: 20px;
-	margin: 0 5px;
-
-	transition-property: width, opacity;
-	transition: all var(--duration) ease-in-out calc(var(--duration) / 2);
-}
-
-.clients-feedback .feedback-container .indicator-bars .bar.active {
-	--bg: var(--color-primary);
-	opacity: 1;
-	flex-grow: 1;
 }
 
 
@@ -439,9 +487,19 @@ main .banner .info {
 		--size: 20px;
 	}
 
+	.carousel .arrows .icon {
+		--size: 35px;
+		--posx: 1%;
+	}
+
+	.carousel-container .content .info .caption {
+		width: 90%;
+	}
+
 	.highlight::after {
 		--size: 400px;
 	}
+
 
 	.products .category {
 		align-items: flex-end;
@@ -484,22 +542,23 @@ main .banner .info {
 }
 
 @media screen and (min-width: 1024px) {
-	main .banner::before {
+	.carousel::before {
 		content: none;
 	}
 
-	main .banner > * {
+	.carousel-container .content > * {
 		flex-basis: 50%;
 	}
 
-	main .banner .info {
+	.carousel-container .content .info {
 		position: static;
 		height: 100%;
 		background-color: #242424;
 		color: var(--color-primary);
+		text-shadow: none;
 	}
 
-	main .banner .info h4 {
+	.carousel-container .content .info h4 {
 		word-spacing: .35rem;
 		letter-spacing: .2rem;
 		font-size: 1.5rem
