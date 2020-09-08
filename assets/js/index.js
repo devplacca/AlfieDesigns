@@ -9,15 +9,16 @@ let carouselTimer
 
 [...carouselButtons.children].forEach(button => {
 	button.addEventListener('click', ({currentTarget}) => {
+		// if (carouselTimer) {
+		// 	clearTimeout(carouselTimer)
+		// }
 		let direction = currentTarget.className.match(/left|right/gi).pop()
 		switchCarouselContent(direction)
+		// carouselTimer = automateCarousel()
 	})
 })
 
 function switchCarouselContent (direction) {
-	// if (carouselTimer) {
-	// 	clearTimeout(carouselTimer)
-	// }
 	const [contents, bars] = [carouselContainer.children, carouselBars.children]
 	const total = contents.length
 	let [index, activeContent, activeBar] = [0]
@@ -33,15 +34,16 @@ function switchCarouselContent (direction) {
 	// deactivate currently active items
 	activeContent.classList.remove('active')
 	activeBar.classList.remove('active')
-	activeContent.ontransitionend = activeContent.oonwebkittransitionend = () => {
+	// activeContent.ontransitionend = activeContent.oonwebkittransitionend = () => {
 		// activate next items
 		index = (index + (direction === 'left' ? -1 : 1)) % total;
 		contents[index].classList.add('active')
 		bars[index].classList.add('active')
-	}
+	// }
 }
 // auto change carousel content
-carouselTimer = setInterval(() => switchCarouselContent('right'), 5000)
+const automateCarousel = () => setInterval(() => switchCarouselContent('right'), 5000)
+carouselTimer = automateCarousel()
 
 
 // CLIENTS FEEDBACK SECTION
